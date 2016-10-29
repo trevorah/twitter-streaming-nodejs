@@ -28,7 +28,7 @@ io.sockets.on('connection', function (socket) {
 
     if(stream === null) {
       //Connect to twitter stream passing in filter for entire world.
-      twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream) {
+      twit.stream('statuses/filter', {track: 'halloween codebar'}, function(stream) {
           stream.on('data', function(data) {
               // Does the JSON result have coordinates
               if (data.coordinates){
